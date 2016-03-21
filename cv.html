@@ -1,0 +1,27 @@
+---
+layout: page
+title: Curriculum vit&aelig;
+---
+
+{% assign cv = site.data.cv %}
+
+{% for section in cv.sections %}
+<hr>
+<h2>{{section[0]}}</h2>
+  {% for els in section[1] %}
+  <div class="cv-container">
+    <span class="cv-section-date">
+      {{els.date[0]}}{% if els.date[1] %}&mdash;{{els.date[1]}}{% endif %}
+    </span>
+    <div class="cv-section">
+      <span class="cv-section-title">{{els.title}}</span>
+      <a href="{{els.place.site}}" target="_blank">{{els.place.name}}</a>
+      &mdash;
+      <span class="cv-section-city">{{els.city}}</span>
+      {% if els.description %}
+        <span class="cv-section-description">{{els.description}}</span>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+{% endfor %}

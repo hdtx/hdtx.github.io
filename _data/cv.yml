@@ -1,0 +1,52 @@
+sections:
+  Education:
+    - date:         [2014, 2015]
+      place:
+        name:         Cranfield University
+        site:         http://www.cranfield.ac.uk
+      title:        MSc in Astronautics and Space Engineering
+      city:         Cranfield, UK
+
+    - date:         [2008, 2012]
+      place:
+        name:         ITA
+        site:         http://www.ita.br
+      title:        BSc in Aerospace Engineering
+      city:         São José dos Campos, Brazil
+
+    - date:         [2012]
+      place:
+        name:         Purdue University
+        site:         http://www.purdue.edu
+      title:        Student Exchange
+      city:         West Lafayette, USA
+
+    - date:         [2000, 2005]
+      place:
+        name:         UFRGS
+        site:         http://www.ufrgs.br
+      title:        BSc in Computer Engineering
+      city:         Porto Alegre, Brazil
+
+  'Work Experience':
+    - date:         [2015]
+      place:
+        name:         DLR &mdash; Institute of Space Systems
+        site:         http://www.dlr.de/irs/en/
+      title:        GNC Intern
+      city:         Bremen, Germany
+      description:  Internship in a satellite formation flying simulation lab. The vehicles used compressed air thrusters to move around the experiment area in 5 DoF (3 rotational, 2 translational).
+
+    - date:         [2013, 2014]
+      place:
+        name:         IAE
+        site:         http://www.iae.cta.br
+      title:        Research Assistant
+      city:         São José dos Campos, Brazil
+
+    - date:         [2006, 2007]
+      place:
+        name:         Datacom
+        site:         http://www.datacom.ind.br
+      title:        Hardware Analyst
+      city:         Porto Alegre, Brazil

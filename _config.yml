@@ -1,0 +1,45 @@
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            'Henrique Daitx'
+tagline:          'hdtx'
+description:      'Rocket Scientist. Programmer. Science & Technology fanatic.'
+url:              http://www.daitx.com
+baseurl:          /
+
+author:
+  name:           'Henrique Daitx'
+  url:            http://github.com/hdtx
+
+paginate:         5
+
+exclude:          [fixstatic.sh]
+
+gems:
+  - jekyll-paginate
+  - redcarpet
+  - jekyll-gist
+  - pygments.rb
+
+# Custom vars
+invert:           true
+
+dir:
+  pub:            /res
+  img:            /res/img
+  css:            /res/css
+
+social_links:
+  'GitHub':       ['https://github.com/hdtx', 'github']
+  'LinkedIn':     ['https://uk.linkedin.com/in/henriquedaitx', 'linkedin']
+  'HackerRank':   ['https://www.hackerrank.com/_hdtx_', 0, 'hackerrank.svg']
+  'XING':         ['https://www.xing.com/profile/Henrique_Daitx', 'xing']
+  'Facebook':     ['https://www.facebook.com/henrique.daitx', 'facebook']
+
+collections:
+  projects:
+    output:       true
+    permalink:    /projects/:title/
+    displayname:  Projects & Experiments

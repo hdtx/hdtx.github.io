@@ -1,0 +1,44 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="{{ site.dir.img }}/hdtx01s.png" />
+      <h1>
+        {{ site.title }}
+      </h1>
+      <p class="lead">{{ site.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+
+      {% for col in site.collections %}
+        {% capture col_url %}{{ site.baseurl }}{{ col[1].label }}/{% endcapture %}
+        <a class="sidebar-nav-item{% if page.url == col_url %} active{% endif %}" href="{{ col_url }}">{{ col[1].displayname }}</a>
+      {% endfor %}
+
+      <hr>
+
+      {% for node in site.pages %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <div class="social-links">
+        {% for link in site.social_links %}
+          <a href="{{ link[1][0] }}" target="_blank" title="{{ link[0] }}">
+          {% if link[1][1] == 0 %}
+            <img src="{{ site.dir.img }}/{{ link[1][2] }}"/>
+          {% else %}
+            <i class="fa fa-2x fa-{{ link[1][1] }}-square"></i>
+          {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    </nav>
+
+    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  </div>
+</div>

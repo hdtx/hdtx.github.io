@@ -1,0 +1,27 @@
+<div class="posts">
+{% for post in include.posts_set %}
+  <div class="post-link">
+    <a href="{{ post.url }}">
+    {% if post.link_photo %}
+      <img class="post-bg link-zoom" src="{{post.link_photo}}">
+    {% else %}
+      <div class="post-bg"></div>
+    {% endif %}
+    </a>
+    <div class="post-text">
+      <h1 class="post-title">
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h1>
+        <span class="post-date">
+        {% if post.description %}
+          {{ post.description }}
+        {% else %}
+          {{ post.date | date_to_string }}
+        {% endif %}
+        </span>
+    </div>
+  </div>
+{% endfor %}
+</div>
