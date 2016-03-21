@@ -1,6 +1,5 @@
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
 title:            'Henrique Daitx'
@@ -21,7 +20,6 @@ gems:
   - jekyll-paginate
   - redcarpet
   - jekyll-gist
-  - pygments.rb
 
 # Custom vars
 invert:           true

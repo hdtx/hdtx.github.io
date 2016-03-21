@@ -20,6 +20,7 @@ sections:
         site:         http://www.purdue.edu
       title:        Student Exchange
       city:         West Lafayette, USA
+      description:  Visiting student at the High Pressure Laboratory &mdash; Maurice J. Zucrow Laboratories complex.
 
     - date:         [2000, 2005]
       place:
@@ -35,7 +36,14 @@ sections:
         site:         http://www.dlr.de/irs/en/
       title:        GNC Intern
       city:         Bremen, Germany
-      description:  Internship in a satellite formation flying simulation lab. The vehicles used compressed air thrusters to move around the experiment area in 5 DoF (3 rotational, 2 translational).
+      description: >
+        Internship in a satellite formation flying simulation lab. The vehicles used compressed air thrusters to move around the experiment area in 5 DoF (3 rotational, 2 translational).
+        <ul>
+          <li>Devised automated procedures for identifying key parameters in the platforms;</li>
+          <li>Developed a combined attitude and position real-time control system, giving the vehicles trajectory-following capability;</li>
+          <li>Built a simulation program which greatly sped up the control algorithm design process.</li>
+        </ul>
+        Design, implementation and testing both of the simulation and of the actual control system were performed using MATLAB (Simulink and Simulink Coder).
 
     - date:         [2013, 2014]
       place:
@@ -43,10 +51,146 @@ sections:
         site:         http://www.iae.cta.br
       title:        Research Assistant
       city:         São José dos Campos, Brazil
+      description: >
+        R&D in attitude control systems for orbital launchers. Main responsibilities:
+          <ul>
+            <li>Embedded software development for inertial systems (C/C++);</li>
+            <li>Spacecraft dynamics studies;</li>
+            <li>Control algorithm design;</li>
+            <li>Simulation software design and implementation.</li>
+          </ul>
 
     - date:         [2006, 2007]
       place:
         name:         Datacom
         site:         http://www.datacom.ind.br
       title:        Hardware Analyst
+      city:         Porto Alegre, Brazil
+      description: >
+        Telecom hardware development. Main activities:
+        <ul>
+          <li>Hardware design &mdash; selection of key components, evaluation of engineering samples, schematic capture and layout design supervision, design for UL/CE regulatory compliance;</li>
+          <li>Maintaining contact with suppliers of key components;</li>
+          <li>Development of testing scripts for production line automated verification.</li>
+        </ul>
+
+    - date:         [2004, 2005]
+      place:
+        name:         UFRGS
+        site:         http://www.ufrgs.br
+      title:        Research Intern
+      city:         Porto Alegre, Brazil
+      description:  Junior research position. I used metaheuristics to perform optimization on bus driver schedules (C++).
+
+    - date:         [2003, 2004]
+      place:
+        name:         UFRGS
+        site:         http://www.ufrgs.br
+      title:        Algorithms & Programming teaching assistant
+      city:         Porto Alegre, Brazil
+      description:  Assistance to students in programming tasks (C and PASCAL).
+
+    - date:         [2001, 2002]
+      place:
+        name:         UFRGS
+        site:         http://www.ufrgs.br
+      title:        Research Intern
+      city:         Porto Alegre, Brazil
+      description:  Junior research position. I worked on artificial intelligence in multiagent systems, with the objective of creating a workable team for the RoboCup football competition (C language).
+
+  'Selected Academic Projects':
+    - date:         [2015]
+      place:
+        name:         DLR &mdash; Institute of Space Systems
+        site:         http://www.dlr.de/irs/en/
+      title:        Development of a combined attitude and position control for a satellite simulator
+      city:         Bremen, Germany
+      description:  Master's thesis (see details in Work Experience section).
+
+    - date:         [2015]
+      place:
+        name:         Cranfield University
+        site:         http://www.cranfield.ac.uk
+      title:        Laplace Orbit GeoSAR Feasibility Study
+      city:         Cranfield, UK
+      description:  Phase 0 study for an Earth Observation mission. Responsible for the Operations and Power Subsystem WPs.
+
+    - date:         [2012]
+      place:
+        name:         ITA
+        site:         http://www.ita.br
+      title:        Development of a Control Algorithm for the Micro-satellite Launcher Vehicle &mdash; VLM
+      city:         São José dos Campos, Brazil
+      description:  Bachelor's thesis. Developed both the rocket's dynamic model and a suitable attitude controller; Designed a digital simulation for validation of the closed-loop system.
+
+    - date:         [2005]
+      place:
+        name:         UFRGS
+        site:         http://www.ufrgs.br
+      title:        Project and Implementation of an Electronically Stabilized Aerial Robotic Platform
+      city:         Porto Alegre, Brazil
+      description:  Bachelor's thesis. Designed and built a quadcopter and related 4DOF control system, including completely self-built hardware and software (TI TMS320 DSP programmed in C); Simulation and validation done in MATLAB/Simulink.
+
+  'Papers and Publications':
+    - date:         ['Sep 2014']
+      place:
+        name:         CBA 2014
+        site:         http://www.swge.inf.br/CBA2014/anais/
+      title:        Development of a Control Algorithm for the Micro-satellite Launcher Vehicle &mdash; VLM
+      city:         Belo Horizonte, Brazil
+      description:  Published in congress proceedings.
+
+    - date:         ['Apr 2013']
+      place:
+        name:         IAC 2013
+        site:         http://www.iafastro.org/
+      title:        Control Systems and Strategies Onboard of VLM-1
+      city:         Beijing, China
+      description:  Abstract
+
+  'Extracurricular Projects':
+    - date:         [2011, 2012]
+      place:
+        name:         ITA Rocket Design
+        site:         https://www.facebook.com/itarocket
+      title:        Experimental and competitive rocketry
+      city:         São José dos Campos, Brazil
+      description:  Team effort for designing rockets to be entered in student rocketry competitions. Designed, built, tested and operated the embedded electronic subsystems and ground equipment subsystem (communications, TM/TC, data logging).
+
+    - date:         [2008, 2010]
+      place:
+        name:         ITA Rocket Design
+        site:         https://www.facebook.com/itabajasae
+      title:        Engineering for academic competitions
+      city:         São José dos Campos, Brazil
+      description:  Team effort for designing an off-road car for student competitions. Designed, built and tested the embedded electronic subsystems (instrumentation, driver interface, data logging).
+
+  'Honors and Awards Received':
+    - date:         ['Dec 2012']
+      place:
+        name:         ITA
+        site:         http://www.ita.br
+      title:        Physics department graduation honors
+      city:         São José dos Campos, Brazil
+
+    - date:         ['Dec 2012']
+      place:
+        name:         ITA
+        site:         http://www.ita.br
+      title:        Humanities department graduation honors
+      city:         São José dos Campos, Brazil
+
+    - date:         ['Jun 2012']
+      place:
+        name:         Intercollegiate Rocket Engineering Competition
+        site:         http://www.soundingrocket.org/
+      title:        Best project in category
+      city:         Green River, USA
+      description:  Team award for best project in the basic category; responsible for electronic systems which represented substantial innovation over other teams' efforts.
+
+    - date:         ['Jan 2000']
+      place:
+        name:         UFRGS
+        site:         http://www.ufrgs.br
+      title:        Top 1% placement, federal university admission exam
       city:         Porto Alegre, Brazil

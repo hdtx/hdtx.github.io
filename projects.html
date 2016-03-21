@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Projects
+title: Projects & Experiments
 ---
 
-{% assign foobar = site.collections['projects'].docs %}
+{% assign foobar = site.projects | sort: 'date' | reverse %}
 {% include index_square.html posts_set=foobar %}

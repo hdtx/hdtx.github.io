@@ -3,7 +3,7 @@
     <div class="sidebar-about">
       <img src="{{ site.dir.img }}/hdtx01s.png" />
       <h1>
-        {{ site.title }}
+        <a href="{{site.baseurl}}">{{ site.title }}</a>
       </h1>
       <p class="lead">{{ site.description }}</p>
     </div>
@@ -12,8 +12,8 @@
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
 
       {% for col in site.collections %}
-        {% capture col_url %}{{ site.baseurl }}{{ col[1].label }}/{% endcapture %}
-        <a class="sidebar-nav-item{% if page.url == col_url %} active{% endif %}" href="{{ col_url }}">{{ col[1].displayname }}</a>
+        {% capture col_url %}{{ site.baseurl }}{{ col.label }}/{% endcapture %}
+        <a class="sidebar-nav-item{% if page.url == col_url %} active{% endif %}" href="{{ col_url }}">{{ col.displayname }}</a>
       {% endfor %}
 
       <hr>
