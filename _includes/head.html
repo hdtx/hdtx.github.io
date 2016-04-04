@@ -3,6 +3,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
+  <meta property="og:site_name" content="{{site.title}}" />
+  <meta property="og:type" content="article" /> 
+  <meta property="og:url" content="{{site.url}}{{page.url}}" />
+  <meta property="og:title" content="{{page.title}}" />
+  {% if page.og_image %}
+    {% assign og_image_p = page.og_image %}
+  {% else if page.link_photo %}
+    {% assign og_image_p = page.link_photo %}
+  {% else %}
+    {% capture og_image %}{{site.url}}{{site.dir.img}}/hdtx01s.png{% endcapture %}
+  {% endif %}
+  {% if og_image_p %}
+    {% capture photo_proto %}{{og_image_p | slice: 0, 4}}{% endcapture %}
+    {% if photo_proto == 'http' %}
+      {% assign og_image = og_image_p %}
+    {% else %}
+      {% capture og_image %}{{site.url}}{{site.dir.img}}/{{og_image_p}}{% endcapture %}
+    {% endif %}
+  {% endif %}
+  <meta property="og:image" content="{{og_image}}" />
+  <meta property="og:description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}" />
+  <meta property="fb:admins" content="1252776194" />
+
   <meta name="description" content="{{site.description}}">
 
   <!-- Enable responsiveness on mobile devices-->
@@ -17,10 +40,10 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ site.dir.css }}/poole.css">
-  <link rel="stylesheet" href="{{ site.dir.css }}/syntax.css">
-  <link rel="stylesheet" href="{{ site.dir.css }}/hyde.css">
-  <link rel="stylesheet" href="{{ site.dir.css }}/hdtx.css">
+  <link rel="stylesheet" href="{{site.dir.css}}/poole.css">
+  <link rel="stylesheet" href="{{site.dir.css}}/syntax.css">
+  <link rel="stylesheet" href="{{site.dir.css}}/hyde.css">
+  <link rel="stylesheet" href="{{site.dir.css}}/hdtx.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -30,4 +53,7 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  {% if jekyll.environment == "production" %}
+    {% include ga.html %}
+  {% endif %}
 </head>

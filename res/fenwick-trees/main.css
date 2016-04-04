@@ -1,0 +1,112 @@
+input {
+  width: 2rem;
+  margin-right: .15rem;
+}
+
+.elsum {
+  border: 2px solid red;
+}
+
+.tree-container {
+  width: 100%;
+  height: 20rem;
+  background-color: #f9f9f9;
+}
+
+.nx {
+  stroke: white;
+  stroke-width: 1.5px;
+}
+
+.nline {
+  stroke: darkgreen;
+}
+
+.nline-nx {
+  stroke: url(#diagHatch); 
+}
+
+.ncircle {
+  fill: green;
+  stroke: darkgreen;
+}
+
+.nsum {
+  stroke: red;
+}
+
+.ncircle-nx {
+  pointer-events: none;
+  fill: url(#diagHatch); 
+}
+
+@media (min-width: 48em) { /* font-size 16px */
+  .nline, .nline-nx, .ncircle, .ncircle-nx {
+    stroke-width: 3.2px;
+  }
+
+  .ncircle {
+    r: 16px;
+  }
+
+  .ncircle-nx {
+    r: 17.6px;
+  }
+}
+
+@media (min-width: 72em) { /* font-size 20px */
+  .nline, .nline-nx, .ncircle, .ncircle-nx {
+    stroke-width: 4px;
+  }
+
+  .ncircle {
+    r: 20px;
+  }
+
+  .ncircle-nx {
+    r: 22px;
+  }
+}
+
+.ntext {
+  pointer-events: none;
+  stroke: white;
+  fill: white;
+  text-anchor: middle;
+  alignment-baseline: central;
+}
+
+.tree.ng-move,
+.tree.ng-enter {
+  transition: all linear 0.25s;
+}
+
+.tree.ng-move.ng-move-active,
+.tree.ng-enter {
+  opacity:0;
+}
+
+.tree.ng-move,
+.tree.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.tree-trace {
+  float: left;
+  width: 16rem;
+}
+
+.tree-trace td {
+  font-family: monospace;
+}
+
+.tree-input-container {
+  background-color: #f9f9f9;
+  padding: .5rem;
+  margin: .5rem 0 .5rem 0;
+  width: fit-content;
+}
+
+.tree-input-container > * {
+  font-size: 80%;
+}

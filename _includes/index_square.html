@@ -3,22 +3,32 @@
   <div class="post-link">
     <a href="{{ post.url }}">
     {% if post.link_photo %}
-      <img class="post-bg link-zoom" src="{{post.link_photo}}">
+      {% capture photo_proto %}{{post.link_photo | slice: 0, 4}}{% endcapture %}
+      {% if photo_proto == 'http' %}
+        {% assign link_photo = post.link_photo %}
+      {% else %}
+        {% capture link_photo %}{{site.dir.img}}/{{post.link_photo}}{% endcapture %}
+      {% endif %}
+      <img class="post-bg link-zoom" src="{{link_photo}}">
     {% else %}
       <div class="post-bg"></div>
     {% endif %}
       <div class="post-text">
-        <h1 class="post-title">
+        {% capture path %}{{post.path | slice: 0, 7}}{% endcapture %}
+        <h1 class="post-title{% if path == '_drafts' %} draft{% endif %}">
           <a href="{{ post.url }}">
             {{ post.title }}
           </a>
         </h1>
           <span class="post-date">
+          {% comment %}
           {% if post.description %}
             {{ post.description }}
           {% else %}
             {{ post.date | date_to_string }}
           {% endif %}
+          {% endcomment %}
+          {{ post.date | date_to_string }}
           </span>
       </div>
     </a>

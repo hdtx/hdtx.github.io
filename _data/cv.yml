@@ -135,7 +135,7 @@ sections:
     - date:         ['Sep 2014']
       place:
         name:         CBA 2014
-        site:         http://www.swge.inf.br/CBA2014/anais/
+        site:         http://www.swge.inf.br/CBA2014/anais/PDF/1569935195.pdf
       title:        Development of a Control Algorithm for the Micro-satellite Launcher Vehicle &mdash; VLM
       city:         Belo Horizonte, Brazil
       description:  Published in congress proceedings.

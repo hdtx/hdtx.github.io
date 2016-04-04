@@ -18,6 +18,12 @@ ul, ol, dl {
   }
 }
 
+input {
+  color: #515151;
+  border: 1px solid #b9b9b9;
+  border-radius: .2rem;
+}
+
 /* sidebar ************************************************************/
 
 .sidebar-about img {
@@ -64,6 +70,11 @@ ul, ol, dl {
 
 .sidebar-about h1 {
   font-size: 1.9rem;
+}
+
+.license {
+  font-size: 75%;
+  color: #717171;
 }
 
 /* cv *****************************************************************/
@@ -168,5 +179,20 @@ ul, ol, dl {
 .content:after, .posts:after, .post-link:after, .posts > a:after{
   content: "";
   clear: both;
+  display: block;
+}
+
+.draft > a {
+  color: #B00000;
+}
+
+.post-date {
+  text-shadow: 0 0 5px white, 0 0 10px white;
+}
+
+.caption {
+  font-size: 75%;
+  text-align: center;
+  font-style: italic;
   display: block;
 }

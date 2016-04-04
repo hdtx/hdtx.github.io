@@ -1,0 +1,69 @@
+<div ng-app="fenwickTreesApp" ng-controller="fenwickTreesCtrl">
+  <div class="tree-input-container">
+    <div class="tree-input-name">Length [2&mdash;32]:</div>
+    <div class="tree-input">
+      <input type="number" min="2" max="{{max_vlen}}" ng-model="vlen" ng-form="ftForm" ng-change="recalc()">
+    </div>
+  </div>
+
+  <div class="tree-input-container">
+    <div class="tree-input-name">Elements:</div>
+    <div class="tree-input">
+      <input type="number" class="{{contains[s.act_node][i] ? ' elsum':''}}" ng-repeat="i in _.range(vlen)" ng-model="el_v[i]" ng-form="ftForm" ng-change="recalc()">
+    </div>
+  </div>
+
+  <div class="tree-input-container">
+    <div class="tree-input-name">Actual values stored in the array:</div>
+    <div class="tree-input">
+      <input type="text" class="{{s.act_node === i ? ' elsum':''}}" min="0" ng-repeat="i in _.range(vlen)" ng-model="v[i]" disabled="true"">
+    </div>
+  </div>
+
+  <div class="tree-input-container">
+    <div class="tree-input-name">Prefix sum:</div>
+    <div class="tree-input">
+      <input type="text" min="0" ng-repeat="i in _.range(vlen)" ng-model="ps_v[i]" disabled="true">
+    </div>
+  </div>
+
+  Prefix sum lookup tree:
+  <div class="tree-container">
+    <svg width="100%" height="100%">
+      <line class="tree nline" ng-attr-x1="{{ps_d.node_x[i]}}" ng-attr-y1="{{ps_d.node_y[i]}}" ng-attr-x2="{{ps_d.node_x[ps_d.parent[i]]}}" ng-attr-y2="{{ps_d.node_y[ps_d.parent[i]]}}" ng-repeat="i in _.range(vlen)" />
+      <circle ng-attr-class="tree ncircle{{contains[s.act_node][i] ? ' nsum':''}}" ng-mouseenter="s.act_node = i" ng-mouseleave="s.act_node = -1" r="18" ng-attr-cx="{{ps_d.node_x[i]}}" ng-attr-cy="{{ps_d.node_y[i]}}" ng-repeat-start="i in _.range(vlen)" />
+      <text class="tree ntext" ng-attr-x="{{ps_d.node_x[i]}}" ng-attr-y="{{ps_d.node_y[i]}}" ng-repeat-end>{{i}}</text>
+    </svg>
+  </div>
+
+  Update tree:
+  <div class="tree-container">
+    <svg width="100%" height="100%">
+      <pattern id="diagHatch" width="3" height="3" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+        <line class="nx" x1="0" y1="0" x2="0" y2="3" />
+      </pattern>
+      <line class="tree nline" ng-attr-x1="{{add_d.node_x[i]}}" ng-attr-y1="{{add_d.node_y[i]}}" ng-attr-x2="{{add_d.node_x[add_d.parent[i]]}}" ng-attr-y2="{{add_d.node_y[add_d.parent[i]]}}" ng-repeat="i in add_d.nodes" />
+      <line class="tree nline-nx" ng-attr-x1="{{add_d.node_x[i]}}" ng-attr-y1="{{add_d.node_y[i]}}" ng-attr-x2="{{add_d.node_x[add_d.parent[i]]}}" ng-attr-y2="{{add_d.node_y[add_d.parent[i]]}}" ng-repeat="i in add_d.non_exist_parent" />
+      <circle ng-attr-class="tree ncircle{{contains[s.act_node][i] ? ' nsum':''}}" ng-mouseenter="s.act_node = i" ng-mouseleave="s.act_node = -1" r="18" ng-attr-cx="{{add_d.node_x[i]}}" ng-attr-cy="{{add_d.node_y[i]}}" ng-repeat="i in add_d.nodes" />
+      <circle class="tree ncircle-nx" r="18" ng-attr-cx="{{add_d.node_x[i]}}" ng-attr-cy="{{add_d.node_y[i]}}" ng-repeat="i in add_d.non_exist" />
+      <text class="tree ntext" ng-attr-x="{{add_d.node_x[i]}}" ng-attr-y="{{add_d.node_y[i]}}" ng-repeat="i in add_d.nodes">{{i}}</text>
+      <circle ng-attr-class="tree ncircle{{contains[s.act_node][0] ? ' nsum':''}}" ng-mouseenter="s.act_node = 0" ng-mouseleave="s.act_node = -1" r="18" cx="90%" cy="10%" />
+      <text class="tree ntext" x="90%" y="10%">0</text>
+    </svg>
+  </div>
+
+  <!--table class="tree-trace">
+    <th colspan="2">Add</th>
+    <tr ng-repeat="i in _.range(vlen)">
+      <th>{{i}}</th><td><span ng-repeat="j in trace_add[i]">{{j}}<span ng-if="$last == false"> &rArr; </span></span></td>
+    </tr>
+  </table>
+
+  <table class="tree-trace">
+    <th colspan="2">Prefix sum lookup</th>
+    <tr ng-repeat="i in _.range(vlen)">
+      <th>{{i}}</th><td><span ng-repeat="j in trace_ps[i]">{{j}}<span ng-if="$last == false"> &rArr; </span></span></td>
+    </tr>
+  </table>
+  <div style="clear: both"></div-->
+</div>
