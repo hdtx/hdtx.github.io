@@ -73,7 +73,7 @@ input {
   stroke: white;
   fill: white;
   text-anchor: middle;
-  alignment-baseline: central;
+  /*alignment-baseline: central;*/ /* Only works in Chrome */
 }
 
 .tree.ng-move,

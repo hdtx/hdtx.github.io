@@ -60,12 +60,12 @@ As said above, the tree topology manifests itself in the _process_ of indexing, 
   <circle class="tree ncircle" r="18" cx="62.5%" cy="25%"/>
   <circle class="tree ncircle" r="18" cx="75%"   cy="50%"/>
   <circle class="tree ncircle" r="18" cx="87.5%" cy="75%"/>
-  <text class="tree ntext" x="25%"   y="25%">0</text>
-  <text class="tree ntext" x="12.5%" y="75%">1</text>
-  <text class="tree ntext" x="37.5%" y="75%">2</text>
-  <text class="tree ntext" x="62.5%" y="25%">0</text>
-  <text class="tree ntext" x="75%"   y="50%">1</text>
-  <text class="tree ntext" x="87.5%" y="75%">2</text>
+  <text class="tree ntext" dy=".3em" x="25%"   y="25%">0</text>
+  <text class="tree ntext" dy=".3em" x="12.5%" y="75%">1</text>
+  <text class="tree ntext" dy=".3em" x="37.5%" y="75%">2</text>
+  <text class="tree ntext" dy=".3em" x="62.5%" y="25%">0</text>
+  <text class="tree ntext" dy=".3em" x="75%"   y="50%">1</text>
+  <text class="tree ntext" dy=".3em" x="87.5%" y="75%">2</text>
 </svg>
 
 <span class="caption">Obligatory obvious example of differently connected trees containing the same elements</span>

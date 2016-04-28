@@ -32,7 +32,7 @@
     <svg width="100%" height="100%">
       <line class="tree nline" ng-attr-x1="{{ps_d.node_x[i]}}" ng-attr-y1="{{ps_d.node_y[i]}}" ng-attr-x2="{{ps_d.node_x[ps_d.parent[i]]}}" ng-attr-y2="{{ps_d.node_y[ps_d.parent[i]]}}" ng-repeat="i in _.range(vlen)" />
       <circle ng-attr-class="tree ncircle{{contains[s.act_node][i] ? ' nsum':''}}" ng-mouseenter="s.act_node = i" ng-mouseleave="s.act_node = -1" r="18" ng-attr-cx="{{ps_d.node_x[i]}}" ng-attr-cy="{{ps_d.node_y[i]}}" ng-repeat-start="i in _.range(vlen)" />
-      <text class="tree ntext" ng-attr-x="{{ps_d.node_x[i]}}" ng-attr-y="{{ps_d.node_y[i]}}" ng-repeat-end>{{i}}</text>
+      <text class="tree ntext" dy=".3em" ng-attr-x="{{ps_d.node_x[i]}}" ng-attr-y="{{ps_d.node_y[i]}}" ng-repeat-end>{{i}}</text>
     </svg>
   </div>
 
@@ -46,9 +46,9 @@
       <line class="tree nline-nx" ng-attr-x1="{{add_d.node_x[i]}}" ng-attr-y1="{{add_d.node_y[i]}}" ng-attr-x2="{{add_d.node_x[add_d.parent[i]]}}" ng-attr-y2="{{add_d.node_y[add_d.parent[i]]}}" ng-repeat="i in add_d.non_exist_parent" />
       <circle ng-attr-class="tree ncircle{{contains[s.act_node][i] ? ' nsum':''}}" ng-mouseenter="s.act_node = i" ng-mouseleave="s.act_node = -1" r="18" ng-attr-cx="{{add_d.node_x[i]}}" ng-attr-cy="{{add_d.node_y[i]}}" ng-repeat="i in add_d.nodes" />
       <circle class="tree ncircle-nx" r="18" ng-attr-cx="{{add_d.node_x[i]}}" ng-attr-cy="{{add_d.node_y[i]}}" ng-repeat="i in add_d.non_exist" />
-      <text class="tree ntext" ng-attr-x="{{add_d.node_x[i]}}" ng-attr-y="{{add_d.node_y[i]}}" ng-repeat="i in add_d.nodes">{{i}}</text>
+      <text class="tree ntext" dy=".3em" ng-attr-x="{{add_d.node_x[i]}}" ng-attr-y="{{add_d.node_y[i]}}" ng-repeat="i in add_d.nodes">{{i}}</text>
       <circle ng-attr-class="tree ncircle{{contains[s.act_node][0] ? ' nsum':''}}" ng-mouseenter="s.act_node = 0" ng-mouseleave="s.act_node = -1" r="18" cx="90%" cy="10%" />
-      <text class="tree ntext" x="90%" y="10%">0</text>
+      <text class="tree ntext" dy=".3em" x="90%" y="10%">0</text>
     </svg>
   </div>
 
