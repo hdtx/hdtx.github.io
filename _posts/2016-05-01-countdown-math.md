@@ -187,7 +187,7 @@ From 0 to 4 extra pairs of `{N, O}`, we can progressively build the language of 
 
 This gives us a grand total of 64 legal words in our language. Looking easy so far. At this point we should also consider how many actual possibilities this entails - the number of actual different solutions we can have for a given game and these given possible words (remember we have to test them all).
 
-Let's call `p` the number of extra `{N, O}` pairs we have on our solution. For `p = 0`, we already know `NNO` is the only possible word. Considering each `N` is one of the 6 numbers we got for our game (order is important), and `O` can be any one of four mathematical operations, we have _C(6,2) * 2 * 4_ = 120.
+Let's call `p` the number of extra `{N, O}` pairs we have in our solution. For `p = 0`, we already know `NNO` is the only possible word. Considering each `N` is one of the 6 numbers we got for our game (order is important), and `O` can be any one of four mathematical operations, we have _C(6,2) * 2 * 4_ = 120.
 
 It's a big number for such a small word! The number of possibilities for each word in general is <i><b>4<sup>(1 + p)</sup> * 6!/(4 - p)!</b></i>, because we have _1 + p_ operators (each can be any one of 4) and _p + 2_ numbers, each of which we sequentially draw from a pool of 6 with no replacement. The number of possibilities for each `p`, already taking into account the number of words for each case, is then:
 
@@ -202,7 +202,7 @@ It's a big number for such a small word! The number of possibilities for each wo
 The formal language described here does not have to be strictly followed by the search implementation. For example, you can only consider the longest words, and count all intermediate results as possible final results. The search will still be complete this way. Nevertheless, here we are analyzing the overall structure instead of focusing on implementation.
 </div>
 
-This means that, in the worst case, we will search around 30 million possibilites for each game (although many of these will be culled midway through the evaluation process because of illegal intermediate results). But how many games we have to consider?
+This means that, in the worst case, we will search around 30 million possibilites for each game (although many of these will be culled midway through the evaluation process because of illegal intermediate results). But how many games do we have to consider?
 
 ### Indexing games
 
@@ -221,7 +221,7 @@ If we count the possible "canonical games" for each of the possible cases (0 lar
 * 4 large: 55 unique games
 * Total: **13243** unique games
 
-The final number is surprisingly small: just over 13 thousand games need to be considered. Keep in mind that each game has a different probability of coming up: if you drew all possible games (not only the canonical ones) using all individual cards -- a staggering 36,917,760 in total -- , the canonical game `1 1 2 2 3 3` would come up 720 times. It's exceedingly more rare than, for example, `1 2 3 4 5 6`, which would come up 46,080 times. These _frequencies_ need to be tracked, so that in the end we can come up with right values for the solving probabilities.
+The final number is surprisingly small: just over 13 thousand games need to be considered. Keep in mind that each game has a different probability of coming up: if you drew all possible games (not only the canonical ones) using all individual cards -- a staggering 36,917,760 games in total -- , the canonical game `1 1 2 2 3 3` would come up 720 times. It's exceedingly more rare than, for example, `1 2 3 4 5 6`, which would come up 46,080 times. These _frequencies_ need to be tracked, so that in the end we can come up with right values for the solving probabilities.
 
 ## Results
 
@@ -242,7 +242,7 @@ The images linked below are a graphical representation of the results. Each pixe
 
 Some structure is noticeable, especially near the beginning of the 3:3 set ("arrows" or "christmas trees"). It's also clear that the area near the beginning of the sets is always the worst for points. This is where the lowest numbers are concentrated (because of the lexicographical ordering), and is a reflection of how bad it is to get a 1 in the draw -- a 1 does not give you too much range in additions and subtractions, and is useless for multiplications and divisions. Also, it becomes obvious that low targets are easier than high targets.
 
-The harmful effect of getting a 1 is quantified in the table below. It shows how successful your game can be on average, given you got a certain number in the draw. Out of all games where at least one 100 is present, 98% are solvable for maximum points. This percentage falls to just 82% when you are dealt at least one number 1.
+The harmful effect of getting a 1 is quantified in the table below. It shows how successful your play (here a _play_ is a concrete game case -- a canonical game _plus_ a given target) can be on average, given you got a certain number in the draw. Out of all possible plays where at least one 100 is present, 98% are solvable for maximum points. This percentage falls to just 82% when you are dealt at least one number 1.
 
 <table id="by_number">
     <thead></thead>
@@ -251,7 +251,7 @@ The harmful effect of getting a 1 is quantified in the table below. It shows how
 
 ### How many large numbers should I choose?
 
-The table below shows, for each case (0 large 6 small, 1 large 5 small, ...) and overall, how many % of the games are able to fetch you the amount indicated in the header.
+The table below shows, for each possible selection (0 large 6 small, 1 large 5 small, ...) and overall, how many % of the possible plays are able to fetch you the amount indicated in the header. This includes all possible targets for each case.
 
 <table id="by_case">
     <thead></thead>
@@ -260,20 +260,20 @@ The table below shows, for each case (0 large 6 small, 1 large 5 small, ...) and
 
 Some immediate conclusions can be drawn from this table:
 
-* Overall in just 1.57% of the cases the contestants will be unable to compete for any points at all, which should be encouraging;
+* Overall in just 1.57% of the plays the contestants will be unable to compete for any points at all, which should be encouraging;
 * If you do NOT choose 6 small and 0 large (clearly the poorest choice for points), this possibility all but disappears;
-* **2 large, 4 small is the best choice in terms of expected points haul**. Additional analysis on the data shows in this case you might be unable to score any points only if you get two 1s AND:
+* **2 large, 4 small is the best choice in terms of expected points haul**. Additional analysis on the data shows in this case you might be unable to score any points (that is, you get a target with no possible solutions within a distance of 10 to either side) only if you get two 1s AND:
   * `2, 2` and any 2 large numbers
   * `2, 3, 50, 100`
   * `2, 4, 50, 100`
   * `3, 3, 50, 100`
   * `4, 4, 25, 100`
   * `7, 7, 25, 100` 
-* Martin's selection of 4 large, 2 small was not the riskiest, but comes in a close second. Even then, the probability of his getting a game worth less than 7 points was basically nil.
+* Martin's selection of 4 large, 2 small was not the riskiest, but comes in a close second. Even then, the probability of his getting a play worth less than 7 points was basically nil.
 
 ### Data analysis tidbits
 
-* The game with the numbers `1 1 2 2 3 3` is the only one where it's impossible to score any points. Luckily, the chances of getting it (provided you disregarded the sound advice above and went with 6 small numbers anyway) are of 1 in 38760.
+* The game with the numbers `1 1 2 2 3 3` is the only one where it's impossible to score any points, **irrespective of the target**. Luckily, the chances of getting it (provided you disregarded the sound advice above and went with 6 small numbers anyway) are of 1 in 38760.
 * Overall there is a 6.57% chance (about 1 in 15) that the drawn game will be solvable for 10 points, no matter the target. (Incidentally, this chance goes down to 1 in 229 if you pick 6 small numbers. So don't be that guy.)
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
