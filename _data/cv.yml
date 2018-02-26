@@ -30,6 +30,16 @@ sections:
       city:         Porto Alegre, Brazil
 
   'Work Experience':
+    - date:         [2016, now]
+      place:
+        name:         Racelogic
+        site:         http://www.racelogic.co.uk
+      title:        Embedded Software Engineer
+      city:         Buckingham, UK
+      description: >
+        I am responsible for developing firmware and related software for a pioneering automotive test system. It allows a huge level of customization by running tests written in a popular scripting language.
+        This system brings together the best of two worlds: all aspects of the test (test logic, user interface, data capture and processing, logging, comms) are fully scriptable, but it keeps the soft real-time capabilities of a 'normal' bare metal system.
+
     - date:         [2015]
       place:
         name:         DLR &mdash; Institute of Space Systems
@@ -192,5 +202,5 @@ sections:
       place:
         name:         UFRGS
         site:         http://www.ufrgs.br
-      title:        Top 1% placement, federal university admission exam
+      title:        Top 0.5% score, federal university admission exam
       city:         Porto Alegre, Brazil
