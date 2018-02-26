@@ -12,7 +12,7 @@
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
 
       {% for col in site.collections %}
-        {% capture col_url %}/{{ site.baseurl }}{{ col.label }}/{% endcapture %}
+        {% capture col_url %}{{ col.label }}/{% endcapture %}
         <a class="sidebar-nav-item{% if page.url == col_url %} active{% endif %}" href="{{ col_url }}">{{ col.displayname }}</a>
       {% endfor %}
 
