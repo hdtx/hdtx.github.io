@@ -38,6 +38,7 @@ sections:
       city:         Buckingham, UK
       description: >
         I am responsible for developing firmware and related software for a pioneering automotive test system. It allows a huge level of customization by running tests written in a popular scripting language.
+        
         This system brings together the best of two worlds: all aspects of the test (test logic, user interface, data capture and processing, logging, comms) are fully scriptable, but it keeps the soft real-time capabilities of a 'normal' bare metal system.
 
     - date:         [2015]
