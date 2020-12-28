@@ -30,7 +30,15 @@ sections:
       city:         Porto Alegre, Brazil
 
   'Work Experience':
-    - date:         [2016, now]
+    - date:         [2018, now]
+      place:
+        name:         Google
+        site:         http://www.google.cm
+      title:        Software Engineer
+      city:         London, UK
+      description:  Making Android Games go faster!
+
+    - date:         [2016, 2018]
       place:
         name:         Racelogic
         site:         http://www.racelogic.co.uk
